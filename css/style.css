@@ -60,6 +60,7 @@ body {
     border-radius: 5px;
     border-top: 4px solid var(--cyan);
     box-shadow: 0px 17px 34px -30px var(--veryDarkBlue);
+    background: white;
 }
 
 .grid-cards-card:nth-child(2) {
