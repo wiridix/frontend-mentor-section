@@ -1,0 +1,117 @@
+:root {
+    /* Primary */
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+
+    /* Neutral */
+    --veryDarkBlue: hsl(234, 12%, 34%);
+    --grayishBlue: hsl(229, 6%, 66%);
+    --veryLightGray: hsl(0, 0%, 98%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    font-size: 15px;
+    background-color: var(--veryLightGray);
+}
+
+.container {
+    width: 85%;
+    margin: 0 auto;
+    height: 100vh;
+}
+
+.title {
+    margin-top: 50px;
+    text-align: center;
+    font-weight: 200;
+}
+
+.title + h2 {
+    font-weight: 600;
+    color: var(--veryDarkBlue);
+    text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+    color: var(--grayishBlue);
+    margin-top: 20px;
+    font-weight: 400;
+}
+
+.grid-cards {
+    margin-top: 50px;
+    display: -ms-grid;
+    display: grid;
+    gap: 25px;
+}
+
+.grid-cards-card {
+    padding: 10px 30px;
+    border-radius: 5px;
+    border-top: 4px solid var(--cyan);
+    box-shadow: 0px 17px 34px -30px var(--veryDarkBlue);
+}
+
+.grid-cards-card:nth-child(2) {
+    border-top: 4px solid var(--red);
+}
+.grid-cards-card:nth-child(3) {
+    border-top: 4px solid var(--orange);
+}
+.grid-cards-card:nth-child(4) {
+    border-top: 4px solid var(--blue);
+}
+
+.grid-cards-card h3 {
+    font-weight: 600;
+    color: var(--veryDarkBlue);
+    margin-top: 15px;
+}
+
+.grid-cards-card h4 {
+    font-weight: 400;
+    font-size: 13px;
+    color: var(--grayishBlue);
+    margin-top: 10px;
+}
+
+.grid-cards-card div {
+    margin-block-start: 20px;
+    margin-block-end: 10px;
+    text-align: end;
+}
+
+@media screen and (min-width: 680px) {
+    .grid-cards {
+        grid-template-areas:
+            "caja1 caja2 caja3"
+            "caja1 caja4 caja3";
+    }
+
+    .grid-cards-card:nth-child(1) {
+        grid-area: caja1;
+        justify-self: center;
+        align-self: center;
+    }
+    .grid-cards-card:nth-child(2) {
+        grid-area: caja2;
+    }
+    .grid-cards-card:nth-child(3) {
+        grid-area: caja4;
+    }
+    .grid-cards-card:nth-child(4) {
+        grid-area: caja3;
+        justify-self: center;
+        align-self: center;
+    }
+}
